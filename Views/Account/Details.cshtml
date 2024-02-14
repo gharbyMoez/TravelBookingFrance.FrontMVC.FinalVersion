@@ -1,0 +1,323 @@
+﻿@model TravelInfo
+
+<div class="container">
+    <section class="section">
+        <h2 class="h2 section-title">Travel </h2>
+        <br />
+        <form style="margin-top:100px;">
+            <div class="row">
+                @*   <div>
+                public int TravelId { get; set; }
+                public string? TravelDate { get; set; }
+                public string TravelName { get; set; }
+                public string Destination { get; set; }
+                public string? DepartureDate { get; set; }
+                public string DepartureAirport { get; set; }
+                public string Ttname { get; set; }
+                </div> *@
+                <div class=" p-3  col col-6">
+                    <div class="row">
+                        <label class="col col-4">TravelName: </label>
+                        <input class="col col-8" style="background-color:antiquewhite" type="text" asp-for="@Model.TravelName" />
+                    </div>
+
+                </div>
+                @*<div class=" col col-1 "></div>*@
+                <div class="p-3 col col-6 ">
+                    <div class="row">
+                        <label class="col col-4">TravelDate: </label>
+                        <input class="col col-8   " style="background-color:antiquewhite" type="text" asp-for="@Model.TravelDate" />
+                    </div>
+                </div>
+
+            </div>
+            <br />
+            <div class="row">
+
+                <div class="p-3 col col-6">
+                    <div class="row">
+                        <label class="col col-4">Destination: </label>
+                        <input class="col col-8" style="background-color:antiquewhite" type="text" asp-for="@Model.Destination" />
+                    </div>
+                </div>
+
+                <div class="p-3 col col-6  ">
+                    <div class="row">
+                        <label class="col col-4">DepartureDate: </label>
+                        <input class="col col-8 " style="background-color:antiquewhite" type="text" asp-for="@Model.DepartureDate" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+
+
+                <div class=" p-3  col col-6">
+                    <div class="row">
+                        <label class="col col-4">DepartureAirport: </label>
+                        <input class="col col-8  " style="background-color:antiquewhite" type="text" asp-for="@Model.DepartureAirport" />
+                    </div>
+
+                </div>
+
+                <div class="p-3 col col-6  ">
+                    <div class="row">
+                        <label class="col col-4">Type Travel </label>
+                        <input class="col col-8  " style="background-color:antiquewhite" type="text" asp-for="@Model.Ttname" />
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </form>
+    </section>
+    <hr />
+    @*  <section class="section">
+    @* <div>
+    public string ProdName { get; set; }
+    public string ProdDescription { get; set; }
+    public ICollection<string> Photos { get; set; }
+    </div> *@
+    <section class="section">
+
+        <h2 class="h2 section-title">My Reservations list</h2>
+
+        <ul class="popular-list" style="margin-top:100px;">
+            @foreach (var item in Model.Products)
+            {
+                <li>
+                    <div class="popular-card">
+
+                        <figure class="card-banner">
+
+                            @*asp-route-id="@model.id"*@
+                            <img src="~/assets/images/car1.jpeg" style="width:300px;height:300px;" loading="lazy"
+                                 alt="Kuala Lumpur, Malaysia" class="img-cover">
+
+
+                            @*<span class="card-badge">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="P12D">12 Days</time>
+                        </span>*@
+                        </figure>
+
+                        <div class="card-content">
+
+                            <div class="card-wrapper">
+                                <div class="card-price">From $50.00</div>
+
+                                <div class="card-rating">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star-outline"></ion-icon>
+
+
+                                </div>
+                            </div>
+
+                            <h3 class="card-title">
+                                <a href="#">@item.ProdName.</a>
+                            </h3>
+
+                            <address class="card-location">@item.ProdDescription</address>
+
+                        </div>
+
+                    </div>
+                </li>
+
+            }
+
+        </ul>
+
+    </section>
+    <hr />
+
+    @*     <div> activites
+    public string Nom { get; set; }
+    public string Lieu { get; set; }
+    public int Durée { get; set; }
+    public decimal Prix { get; set; }
+    public string UrlImageAct { get; set; }
+    </div> *@
+    <section class="section">
+
+        <h2 class="h2 section-title">My Activites list</h2>
+
+        <ul class="popular-list" style="margin-top:100px;">
+
+            <li>
+                <div class="popular-card">
+
+                    <figure class="card-banner">
+                        <a asp-action="Details">
+                            @*asp-route-id="@model.id"*@
+                            <img src="~/assets/images/popular-1.jpg" width="740" height="518" loading="lazy"
+                                 alt="Kuala Lumpur, Malaysia" class="img-cover">
+                        </a>
+
+                        @*<span class="card-badge">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="P12D">12 Days</time>
+                        </span>*@
+                    </figure>
+
+                    <div class="card-content">
+
+                        <div class="card-wrapper">
+                            <div class="card-price">From $50.00</div>
+
+                            <div class="card-rating">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+
+                                <data value="2">(2)</data>
+                            </div>
+                        </div>
+
+                        <h3 class="card-title">
+                            <a href="#">A good traveler has no fixed plans and is not intent on arriving.</a>
+                        </h3>
+
+                        <address class="card-location">Kuala Lumpur, Malaysia</address>
+
+                    </div>
+
+                </div>
+            </li>
+
+
+
+        </ul>
+
+    </section>
+
+
+
+    <section class="section">
+
+        <h2 class="h2 section-title">My Aircraft</h2>
+
+        <ul class="popular-list" style="margin-top:100px;">
+
+            <li>
+                <div class="popular-card">
+
+                    <figure class="card-banner">
+                        <a asp-action="Details">
+                            @*asp-route-id="@model.id"*@
+                            <img src="~/assets/images/avion.jpg" width="740" height="518" loading="lazy"
+                                 alt="Kuala Lumpur, Malaysia" class="img-cover">
+                        </a>
+
+                        @*<span class="card-badge">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="P12D">12 Days</time>
+                        </span>*@
+                    </figure>
+
+                    <div class="card-content">
+
+                        <div class="card-wrapper">
+                            <div class="card-price">From $50.00</div>
+
+                            <div class="card-rating">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+
+                                <data value="2">(2)</data>
+                            </div>
+                        </div>
+
+                        <h3 class="card-title">
+                            <a href="#">@Model.CompanyName</a>
+                        </h3>
+
+                        <address class="card-location">@Model.DepartureAirport</address>
+
+                    </div>
+
+                </div>
+            </li>
+
+
+
+        </ul>
+        @*    <div>
+        public string FlightNumber { get; set; }
+        public string CompanyName { get; set; }
+        public DateTime DateOfDepart { get; set; }
+        public DateTime DateOfArrival { get; set; }
+        public string SeatNumber { get; set; }
+
+        </div> *@
+        <form style="margin-top:100px;">
+            <div class="row">
+
+                <div class=" p-3  col col-6">
+                    <div class="row">
+                        <label class="col col-4">DepartureAirport: </label>
+                        <input class="col col-8   " style="background-color:antiquewhite" type="text" asp-for="@Model.DepartureAirport" />
+                    </div>
+
+                </div>
+                @*<div class=" col col-1 "></div>*@
+                <div class="p-3 col col-6 ">
+                    <div class="row">
+                        <label class="col col-4">DateOfDepart: </label>
+                        <input class="col col-8   " style="background-color:antiquewhite" type="text" asp-for="@Model.DateOfDepart" />
+                    </div>
+                </div>
+
+            </div>
+            <br />
+            <div class="row">
+
+                <div class="p-3 col col-6">
+                    <div class="row">
+                        <label class="col col-4">DateOfArrival: </label>
+                        <input class="col col-8" style="background-color:antiquewhite" type="text" asp-for="@Model.DateOfArrival" />
+                    </div>
+                </div>
+
+                <div class="p-3 col col-6  ">
+                    <div class="row">
+                        <label class="col col-4">FlightNumber: </label>
+                        <input class="col col-8 " style="background-color:antiquewhite" type="text" asp-for="@Model.FlightNumber" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+
+
+                <div class=" p-3  col col-6">
+                    <div class="row">
+                        <label class="col col-4">SeatNumber: </label>
+                        <input class="col col-8  " style="background-color:antiquewhite" type="text" asp-for="@Model.SeatNumber" />
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </form>
+    </section>
+</div>
